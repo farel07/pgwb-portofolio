@@ -1,0 +1,30 @@
+.jumbotron {
+    padding-top: 2rem;
+    background-color: rgb(252, 253, 206);
+  }
+  
+  .jumbotron .lead {
+    font-size: 15px;
+    font-family: cambria;
+  }
+  
+  .jumbotron .nama {
+    font-size: 45px;
+    font-family: cambria;
+    margin-top: 20px;
+  }
+  
+  .jumbotron img {
+    border: 4px solid white;
+  }
+  
+  #projek {
+    background-color: rgb(252, 253, 206);
+  }
+  
+  .footer {
+    height: 50px;
+    background-color: rgb(252, 253, 206);
+    text-align: center;
+  }
+  
