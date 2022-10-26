@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
-use App\Models\contact_siswa;
+use App\Models\Contact_siswa;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 
