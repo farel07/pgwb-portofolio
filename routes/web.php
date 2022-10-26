@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ContactSiswaController;
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\SiswaController;
 use App\Models\Siswa;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ContactSiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,4 +56,8 @@ Route::get('/project', function () {
 });
 Route::get('/contact_me', function () {
     return view('contact_me');
+});
+
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
 });
