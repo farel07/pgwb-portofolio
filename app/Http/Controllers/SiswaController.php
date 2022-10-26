@@ -64,7 +64,7 @@ class SiswaController extends Controller
         // cek apakah user engupload picture
         if ($request->file('photo')) {
             // $validatedData['photo'] = $request->file('photo')->store('siswa_picture', ['disk' => 'public']);
-            $photo_name = uniqid() . '.' . $request->file('photo')->getClientOriginalExtension();
+            $photo_name = uniqid() . now() . '.' . $request->file('photo')->getClientOriginalExtension();
             $validatedData['photo'] = $request->file('photo')->move('siswa_picture', $photo_name);
         }
         // return  $validatedData['picture'];
@@ -135,7 +135,7 @@ class SiswaController extends Controller
         ], $messages);
         // return $request->file('photo');
         if ($request->file('photo')) {
-            $photo_name = uniqid() . '.' . $request->file('photo')->getClientOriginalExtension();
+            $photo_name = uniqid() . now() . '.' . $request->file('photo')->getClientOriginalExtension();
             $validatedData['photo'] = $request->file('photo')->move('siswa_picture', $photo_name);
             if ($request->oldImage) {
                 // Storage::disk('public')->delete($request->oldImage);
