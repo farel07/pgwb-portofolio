@@ -5,7 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Contact;
-use App\Models\contact_siswa;
+use App\Models\Contact_siswa;
 use App\Models\Project;
 use App\Models\Siswa;
 use App\Models\User;
