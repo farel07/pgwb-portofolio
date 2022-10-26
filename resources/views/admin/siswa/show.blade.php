@@ -7,7 +7,7 @@
     {{-- {{ $siswa }} --}}
     <div class="col-lg-3">
         <div class="card border-dark" style="width: 16rem;">
-            <img src="/storage/{{ $siswa->photo }}" class="card-img-top" alt="...">
+            <img src="/{{ $siswa->photo }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">Nama : {{ $siswa->nama }}</li>

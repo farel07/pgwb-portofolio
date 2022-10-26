@@ -6,6 +6,8 @@ namespace App\Http\Controllers;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
 
 class SiswaController extends Controller
 {
@@ -59,10 +61,11 @@ class SiswaController extends Controller
             'photo' => 'image|file|max:2048',
             'about' => 'required'
         ], $messages);
-
         // cek apakah user engupload picture
         if ($request->file('photo')) {
-            $validatedData['photo'] = $request->file('photo')->store('siswa_picture', ['disk' => 'public']);
+            // $validatedData['photo'] = $request->file('photo')->store('siswa_picture', ['disk' => 'public']);
+            $photo_name = uniqid() . '.' . $request->file('photo')->getClientOriginalExtension();
+            $validatedData['photo'] = $request->file('photo')->move('siswa_picture', $photo_name);
         }
         // return  $validatedData['picture'];
         Siswa::create($validatedData);
@@ -117,6 +120,9 @@ class SiswaController extends Controller
             'photo.max' => 'Ukuran gambar terlalu besar'
         ]);
 
+        // $request->file('photo')->getClientOriginalName();
+        // return uniqid() . '.' . $request->file('photo')->getClientOriginalExtension();
+
         // return $request->file('picture');
         $validatedData = $request->validate([
             'nama' => 'required|min:6',
@@ -127,11 +133,13 @@ class SiswaController extends Controller
             'photo' => 'image|file|max:2048',
             'about' => 'required'
         ], $messages);
-
+        // return $request->file('photo');
         if ($request->file('photo')) {
-            $validatedData['photo'] = $request->file('photo')->store('siswa_picture', ['disk' => 'public']);
+            $photo_name = uniqid() . '.' . $request->file('photo')->getClientOriginalExtension();
+            $validatedData['photo'] = $request->file('photo')->move('siswa_picture', $photo_name);
             if ($request->oldImage) {
-                Storage::disk('public')->delete($request->oldImage);
+                // Storage::disk('public')->delete($request->oldImage);
+                File::delete($request->oldImage);
             }
         }
 
