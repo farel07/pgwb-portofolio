@@ -21,7 +21,7 @@ use App\Http\Controllers\ContactSiswaController;
 */
 
 Route::get('/', function () {
-    return redirect('/login');
+    return view('index');
 });
 
 Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');

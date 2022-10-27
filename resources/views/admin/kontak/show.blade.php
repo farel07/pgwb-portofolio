@@ -24,8 +24,8 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col" class="anj">Deskripsi</th>
                     <th scope="col" class="anj">Siswa</th>
+                    <th scope="col" class="anj">Deskripsi</th>
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
@@ -33,8 +33,8 @@
                     @foreach ($contact->siswa as $cs)
                     <tr>
                     <th scope="row">{{ $loop->iteration }}</th>
-                    <td>{{ $cs->pivot->description }}</td>
                     <td>{{ $cs->nama }}</td>
+                    <td>{{ $cs->pivot->description }}</td>
                     {{-- <td>{{  }}</td> --}}
                     <td>
                         {{-- <form action="master_project/{{ $p->id }}" method="POST"> --}}

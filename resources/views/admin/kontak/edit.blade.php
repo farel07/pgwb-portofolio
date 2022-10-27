@@ -6,7 +6,7 @@
 
 <div class="col-lg-6 mt-3">
 
-    <form action="../contact_siswa/{{ $contact_siswa->id }}" method="post">
+    <form action="../{{ $contact_siswa->id }}" method="post">
         @csrf
         @method('put')
         <div class="form-group m">
